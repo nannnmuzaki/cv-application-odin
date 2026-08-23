@@ -3,12 +3,16 @@ import { ExperienceSection } from "./ExperienceSection/ExperienceForm";
 import { PersonalDetailsSection } from "./PersonalDetailsSection/PersonalDetailsSection";
 import "./Form.css";
 
-export function Form() {
+export function Form({ cvData, setCvData }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="cv-form">
       <h2>Form</h2>
-      <form>
-        <PersonalDetailsSection />
+      <form onSubmit={handleSubmit}>
+        <PersonalDetailsSection data={cvData.personalDetails} setCvData={setCvData} />
         <EducationSection />
         <ExperienceSection />
       </form>

@@ -12,13 +12,13 @@ export function EducationSection() {
           <input
             type="text"
             id="edu-start-date"
-            name="edu-start-date"
+            name="eduStartDate"
             placeholder="Enter start date"
           />
         </div>
         <div>
           <label htmlFor="edu-end-date">End Date</label>
-          <input type="text" id="edu-end-date" name="edu-end-date" placeholder="Enter end date" />
+          <input type="text" id="edu-end-date" name="eduEndDate" placeholder="Enter end date" />
         </div>
       </div>
       <button type="button">Add Education</button>

@@ -8,14 +8,14 @@ export function ExperienceSection() {
       <input
         type="text"
         id="company-name"
-        name="company-name"
+        name="companyName"
         placeholder="Enter company / institution name"
       />
       <label htmlFor="position-title">Position Title</label>
       <input
         type="text"
         id="position-title"
-        name="position title"
+        name="positionTitle"
         placeholder="Enter position title"
       />
       <div className="date-container">
@@ -24,13 +24,13 @@ export function ExperienceSection() {
           <input
             type="text"
             id="exp-start-date"
-            name="exp-start-date"
+            name="expStartDate"
             placeholder="Enter start date"
           />
         </div>
         <div>
           <label htmlFor="exp-end-date">End Date</label>
-          <input type="text" id="exp-end-date" name="exp-end-date" placeholder="Enter end date" />
+          <input type="text" id="exp-end-date" name="exPendDate" placeholder="Enter end date" />
         </div>
       </div>
       <label htmlFor="company-location">Location</label>
@@ -41,7 +41,7 @@ export function ExperienceSection() {
         placeholder="Enter location"
       />
       <label htmlFor="exp-description">Description</label>
-      <textarea id="exp-description" name="exp-description" placeholder="Enter description" />
+      <textarea id="exp-description" name="expDescription" placeholder="Enter description" />
       <button type="button">Add Experience</button>
     </section>
   );
