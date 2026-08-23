@@ -20,6 +20,11 @@
   border: 1px solid var(--border);
 }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .cv-form h3 {
   font-family: var(--mono);
   margin: 0;
