@@ -1,5 +1,5 @@
 :root {
-  --text: #6b6375;
+  --text: #08060d;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
@@ -13,6 +13,7 @@
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --serif: "Times New Roman", Times, serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -31,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
+    --text: #f3f4f6;
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;

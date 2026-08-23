@@ -1,0 +1,6 @@
+h2 {
+  font-family: var(--mono);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  font-size: 32px;
+}

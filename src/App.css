@@ -180,3 +180,13 @@
     border-right-color: var(--border);
   }
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
