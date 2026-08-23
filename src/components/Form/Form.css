@@ -10,7 +10,7 @@
   padding: 1rem 0;
 }
 
-.personal-details {
+.input-group {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -19,20 +19,60 @@
   border: 1px solid var(--border);
 }
 
-.personal-details h3 {
+.cv-form h3 {
   font-family: var(--mono);
   margin: 0;
   margin-bottom: 0.8rem;
 }
 
-.personal-details label {
+.cv-form label {
   font-family: var(--mono);
   margin-bottom: 0.2rem;
 }
 
-.personal-details input {
+.cv-form input {
   background-color: var(--bg);
   border: 1px solid var(--border);
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin-bottom: 0.8rem;
 }
+
+.cv-form textarea {
+  font-family: var(--sans);
+  font-size: 14px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.cv-form button {
+  font-family: var(--mono);
+  font-size: 16px;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  padding: 0.8rem 0;
+}
+
+.cv-form button:hover {
+  cursor: pointer;
+  background-color: rgb(from var(--code-bg) r g b / 0.6);
+}
+
+.date-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.date-container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-container > div:nth-child(1) {
+  margin-right: 1rem;
+}
+
+/*.input-group:last-child {
+    margin-bottom: 4rem;
+}*/
