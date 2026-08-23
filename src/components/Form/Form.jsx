@@ -13,7 +13,7 @@ export function Form({ cvData, setCvData }) {
       <h2>Form</h2>
       <form onSubmit={handleSubmit}>
         <PersonalDetailsSection data={cvData.personalDetails} setCvData={setCvData} />
-        <EducationSection />
+        <EducationSection data={cvData.education} setCvData={setCvData} />
         <ExperienceSection />
       </form>
     </section>
