@@ -1,12 +1,12 @@
 import "./Builder.css";
 import { Form } from "../Form/Form";
-import { Result } from "../Result/Result";
+import { Preview } from "../Preview/Preview";
 
 export function Builder() {
   return (
-    <div class="builder-container">
+    <div className="builder-container">
       <Form />
-      <Result />
+      <Preview />
     </div>
   );
 }
