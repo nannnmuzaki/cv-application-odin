@@ -1,5 +1,5 @@
 import { EducationSection } from "./EducationSection/EducationSection";
-import { ExperienceSection } from "./ExperienceSection/ExperienceForm";
+import { ExperienceSection } from "./ExperienceSection/ExperienceSection";
 import { PersonalDetailsSection } from "./PersonalDetailsSection/PersonalDetailsSection";
 import "./Form.css";
 
@@ -14,7 +14,7 @@ export function Form({ cvData, setCvData }) {
       <form onSubmit={handleSubmit}>
         <PersonalDetailsSection data={cvData.personalDetails} setCvData={setCvData} />
         <EducationSection data={cvData.education} setCvData={setCvData} />
-        <ExperienceSection />
+        <ExperienceSection data={cvData.experience} setCvData={setCvData} />
       </form>
     </section>
   );

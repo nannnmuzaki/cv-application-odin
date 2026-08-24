@@ -1,3 +1,12 @@
 .input-group.experience-section {
   margin-bottom: 4rem;
 }
+
+.exp-section-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.exp-section-buttons > button {
+  flex-grow: 1;
+}
