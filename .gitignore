@@ -25,3 +25,6 @@ dist-ssr
 
 # zed
 .zed/
+
+# cloudflare workers
+.wrangler/
