@@ -16,6 +16,9 @@
   flex-direction: column;
   text-align: left;
   margin: 1rem;
+  @media (width < 500px) {
+      margin: 1rem 0;
+  }
   padding: 1rem;
   border: 1px solid var(--border);
 }
@@ -77,6 +80,9 @@
 
 .date-container > div:nth-child(1) {
   margin-right: 1rem;
+  @media (width < 500px) {
+      margin-right: 0;
+  }
 }
 
 /*.input-group:last-child {
