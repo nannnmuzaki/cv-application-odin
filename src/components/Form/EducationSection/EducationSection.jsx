@@ -1,42 +1,77 @@
+import "./EducationSection.css";
 import { useState } from "react";
+import { EducationItem } from "./EducationItem/EducationItem";
 
-// data will be used to render list of education item
-// oxlint-disable-next-line
+const initialEducationState = {
+  id: "",
+  school: "",
+  degree: "",
+  eduStartDate: "",
+  eduEndDate: "",
+};
+
 export function EducationSection({ data, setCvData }) {
-  const [educationItem, setEducationItem] = useState({
-    school: "",
-    degree: "",
-    eduStartDate: "",
-    eduEndDate: "",
-  });
+  const [educationItemData, setEducationItemData] = useState(initialEducationState);
+
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleChange = (e) => {
-    setEducationItem((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+    setEducationItemData((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
   };
 
   const handleAddClick = () => {
-    const newEducationData = { ...educationItem, id: crypto.randomUUID() };
-
     setCvData((prevState) => {
       return {
         ...prevState,
-        education: [...prevState.education, newEducationData],
+        education: [...prevState.education, { ...educationItemData, id: crypto.randomUUID() }],
       };
     });
 
-    setEducationItem({ school: "", degree: "", eduStartDate: "", eduEndDate: "" });
+    setEducationItemData(initialEducationState);
+  };
+
+  const handleUpdateClick = () => {
+    setCvData((prevState) => {
+      return {
+        ...prevState,
+        education: prevState.education.map((item) =>
+          item.id === educationItemData.id ? { ...item, ...educationItemData } : item,
+        ),
+      };
+    });
+
+    setIsEditing(false);
+    setEducationItemData(initialEducationState);
+  };
+
+  const handleCancelEdit = () => {
+    setEducationItemData(initialEducationState);
+    setIsEditing(false);
   };
 
   return (
     <section className="input-group education-section">
       <h3>Education</h3>
+      {data.length > 0 && (
+        <div className="education-items-list">
+          {data.map((item) => (
+            <EducationItem
+              key={item.id}
+              data={item}
+              setCvData={setCvData}
+              setEducationItemData={setEducationItemData}
+              setIsEditing={setIsEditing}
+            />
+          ))}
+        </div>
+      )}
       <label htmlFor="school">School</label>
       <input
         type="text"
         id="school"
         name="school"
         onChange={handleChange}
-        value={educationItem.school}
+        value={educationItemData.school}
         placeholder="Enter school / university"
       />
       <label htmlFor="degree">Degree</label>
@@ -45,7 +80,7 @@ export function EducationSection({ data, setCvData }) {
         id="degree"
         name="degree"
         onChange={handleChange}
-        value={educationItem.degree}
+        value={educationItemData.degree}
         placeholder="Enter degree / field of study"
       />
       <div className="date-container">
@@ -56,7 +91,7 @@ export function EducationSection({ data, setCvData }) {
             id="edu-start-date"
             name="eduStartDate"
             onChange={handleChange}
-            value={educationItem.eduStartDate}
+            value={educationItemData.eduStartDate}
             placeholder="Enter start date"
           />
         </div>
@@ -67,14 +102,21 @@ export function EducationSection({ data, setCvData }) {
             id="edu-end-date"
             name="eduEndDate"
             onChange={handleChange}
-            value={educationItem.eduEndDate}
+            value={educationItemData.eduEndDate}
             placeholder="Enter end date"
           />
         </div>
       </div>
-      <button onClick={handleAddClick} type="button">
-        Add Education
-      </button>
+      <div className="edu-section-buttons">
+        <button type="button" onClick={isEditing ? handleUpdateClick : handleAddClick}>
+          {isEditing ? "Update Education" : "Add Education"}
+        </button>
+        {isEditing && (
+          <button type="button" onClick={handleCancelEdit}>
+            Cancel
+          </button>
+        )}
+      </div>
     </section>
   );
 }

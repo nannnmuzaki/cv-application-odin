@@ -1,0 +1,8 @@
+.edu-section-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.edu-section-buttons > button {
+  flex-grow: 1;
+}
