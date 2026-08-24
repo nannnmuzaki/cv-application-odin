@@ -4,10 +4,6 @@
   margin-bottom: 1rem;
 }
 .education-item {
-  font-size: 18px/145%;
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
   display: flex;
   flex-direction: column;
   border-inline: 1px solid var(--border);
@@ -28,6 +24,20 @@
 .edu-item-container > div:first-child {
   display: flex;
   flex-direction: column;
+}
+
+.edu-item-container > div:last-child {
+  font-size: 16px;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
+.edu-item-container > div:first-child > p:last-child {
+  font-size: 14px;
+  @media (max-width: 1024px) {
+    font-size: 12px;
+  }
 }
 
 .edu-item-buttons {
