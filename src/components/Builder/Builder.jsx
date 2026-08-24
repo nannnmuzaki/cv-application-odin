@@ -1,6 +1,6 @@
 import "./Builder.css";
 import { Form } from "../Form/Form";
-import { Preview } from "../Preview/Preview";
+import { PreviewSection } from "../PreviewSection/PreviewSection";
 import { useState } from "react";
 
 export function Builder() {
@@ -18,7 +18,7 @@ export function Builder() {
   return (
     <div className="builder-container">
       <Form cvData={cvData} setCvData={setCvData} />
-      <Preview cvData={cvData} />
+      <PreviewSection cvData={cvData} />
     </div>
   );
 }

@@ -1,0 +1,166 @@
+.cv-preview {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1 / 1.4142;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+/* Header */
+.cv-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #000000;
+}
+
+.cv-name {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+  color: #000000;
+}
+
+.cv-contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+/* Sections */
+.cv-section {
+  margin-bottom: 1.5rem;
+}
+
+.cv-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #000000;
+}
+
+/* Entry Layout */
+.cv-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cv-entry-left {
+  text-align: left;
+  flex: 1;
+}
+
+.cv-entry-right {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cv-institution {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.cv-subhead {
+  font-size: 1rem;
+  font-style: italic;
+  color: #000000;
+  margin: 0.1rem 0 0 0;
+}
+
+.cv-dates {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.cv-location {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #000000;
+  margin: 0.1rem 0 0 0;
+}
+
+/* Full Width Description */
+.cv-description {
+  width: 100%;
+  font-size: 0.95rem;
+  color: #000000;
+  margin: 0.5rem 0 0 0;
+  white-space: pre-line;
+  word-break: break-word;
+  text-align: left;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #cv-preview,
+  #cv-preview * {
+    visibility: visible;
+  }
+
+  #cv-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: 20mm 25mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

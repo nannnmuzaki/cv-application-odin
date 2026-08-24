@@ -14,7 +14,7 @@ export function PersonalDetailsSection({ data, setCvData }) {
   };
 
   return (
-    <section className="input-group personal-details-form">
+    <section className="input-group personal-details-section">
       <h3>Personal Details</h3>
       <label htmlFor="full-name">Full Name</label>
       <input
@@ -33,6 +33,15 @@ export function PersonalDetailsSection({ data, setCvData }) {
         name="email"
         value={data.email}
         placeholder="Enter email"
+      />
+      <label htmlFor="phone">Phone Number</label>
+      <input
+        onChange={handleChange}
+        type="text"
+        id="phone"
+        name="phone"
+        value={data.phone}
+        placeholder="Enter phone number"
       />
       <label htmlFor="linkedin">LinkedIn</label>
       <input
