@@ -85,7 +85,7 @@ export function EducationSection({ data, setCvData }) {
       />
       <div className="date-container">
         <div>
-          <label htmlFor="start-date">Start Date</label>
+          <label htmlFor="edu-start-date">Start Date</label>
           <input
             type="text"
             id="edu-start-date"
